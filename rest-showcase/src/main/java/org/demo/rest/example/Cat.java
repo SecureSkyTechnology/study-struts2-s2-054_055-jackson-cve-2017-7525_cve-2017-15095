@@ -1,0 +1,14 @@
+package org.demo.rest.example;
+
+public class Cat extends Animal {
+    public boolean likesCream;
+    public int lives;
+
+    public Cat() {
+    }
+
+    @Override
+    public String toString() {
+        return "Cat [likesCream=" + likesCream + ", lives=" + lives + "]";
+    }
+}

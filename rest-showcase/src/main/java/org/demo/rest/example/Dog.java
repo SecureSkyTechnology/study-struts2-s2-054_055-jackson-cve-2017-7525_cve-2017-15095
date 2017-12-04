@@ -1,0 +1,13 @@
+package org.demo.rest.example;
+
+public class Dog extends Animal {
+    public double barkVolume;
+
+    public Dog() {
+    }
+
+    @Override
+    public String toString() {
+        return "Dog [barkVolume=" + barkVolume + "]";
+    }
+}

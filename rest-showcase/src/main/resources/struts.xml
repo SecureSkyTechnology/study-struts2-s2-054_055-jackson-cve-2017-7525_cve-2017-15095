@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+-->
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+
+<struts>
+
+    <!-- http://struts.apache.org/plugins/rest/ "Use Jackson framework as JSON ContentTypeHandler" -->
+    <bean type="org.apache.struts2.rest.handler.ContentTypeHandler" name="jackson" class="org.apache.struts2.rest.handler.JacksonLibHandler"/>
+    <constant name="struts.rest.handlerOverride.json" value="jackson"/>
+    <!-- Set to false if the json content can be returned for any kind of http method -->
+    <constant name="struts.rest.content.restrictToGET" value="false"/> 
+    <!-- Set encoding to UTF-8, default is ISO-8859-1 -->
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+
+    <!--  Overwrite Convention -->
+    <constant name="struts.convention.action.suffix" value="Controller"/>
+    <constant name="struts.convention.action.mapAllMatches" value="true"/>
+    <constant name="struts.convention.default.parent.package" value="rest-showcase"/>
+
+    <constant name="struts.convention.package.locators" value="example"/>
+
+    <package name="rest-showcase" extends="rest-default">
+        <global-allowed-methods>index,show,create,update,destroy,deleteConfirm,edit,editNew</global-allowed-methods>
+    </package>
+</struts>

@@ -1,0 +1,8 @@
+package org.demo.rest.example;
+
+public abstract class Animal {
+    public String name;
+
+    protected Animal() {
+    }
+}

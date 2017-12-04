@@ -1,0 +1,13 @@
+package org.demo.rest.example;
+
+public class Zoo {
+    public String id;
+    //@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.WRAPPER_ARRAY)
+    public Animal animal;
+    //public Object animal;
+
+    @Override
+    public String toString() {
+        return "Zoo [id=" + id + ", animal=" + animal + "]";
+    }
+}
